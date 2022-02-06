@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My Website</title>
+    <link href="style.css?v=0.0.6" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js?v=0.1.6"></script>
+    <div class="intro">
+      <h1 style="color: darkblue;">Welcome to my website!</h1>
+      <div class="message">
+        <div class="break"></div>
+        <b>Here is a list of my favourite things:</b>
+        <br>
+        <i>Click on any of them to find out more!</i>
+        <div class="break"></div>
+      </div>
+    </div>
+
+    <div class="break"></div>
+    <div class="break"></div>
+
+    <div style="width:100%;">
+      <div class="column">
+        <h2 class="caption">My favourite books</h2>
+
+        <h1>The Hunger Games</h1>
+
+        <hr></hr>
+
+        <img style="width:100%" src="https://images-na.ssl-images-amazon.com/images/I/51r-NIhfu7L._AC_SX466_.jpg"></img>
+
+        <p>The Hunger Games is a series of young adult dystopian novels written by the American author Suzanne Collins. The series is set in the Hunger Games universe, with the first three novels being a trilogy following teenage protagonist, Katniss Everdeen.
+        <br>
+        <i>- Wikipedia</i>
+        <br>
+        </p>
+
+        <button onclick="window.location.href='https://en.wikipedia.org/wiki/The_Hunger_Games'">Learn More</button>
+      </div>
+
+      <div class="column">
+        <h2 class="caption">My favourite food</h2>
+        <h1>Tapas</h1>
+
+        <hr></hr>
+
+        <img style="width:100%" src="https://www.goya.com/media/6702/spanish-tapas-platter.jpg?quality=80"></img>
+
+        <p>Tapas may be cold (such as mixed olives and cheese) or hot (such as chopitos, which are battered, fried baby squid).
+        <br>
+        <i>- Wikipedia</i>
+        <br>
+        </p>
+
+        <button onclick="window.location.href='https://en.wikipedia.org/wiki/Tapas'">Learn more</button>
+      </div>
+    </div>
+
+
+    <div class="column">
+      <h1>Random number generator</h1>
+      <caption>Lowest Number: </caption>
+      <input id="firstNumber" type="number">
+      <div class="break"></div>
+      <caption>Highest Number: </caption>
+      <input id="lastNumber" type="number">
+      </input>
+      
+      <div class="break"></div>
+
+      <button onclick="generate()" style="background-color:deepskyblue;">Generate</button>
+      <h1 style="text-size:20px; color:darkred" id="number"></h1>
+    </div>
+  </body>
+</html>

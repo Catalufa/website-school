@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 25%;
+  height: 300px;
+  perspective: 1000px;
+  float: left;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-inner p {
+    padding: 10px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #B7F3E3;
+}
+
+.flip-card-back {
+  background-color: #A8FDA6;
+  transform: rotateY(180deg);
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#overlay input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    font-size: 20px;
+
+}
+</style>
+
+<script>
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+function test() {
+    on();
+    cards = document.getElementsByClassName("flip-card");
+    selected = cards[Math.floor(Math.random()*cards.length)];
+    overlay = document.getElementById("overlay")
+    overlay.innerHTML = selected.innerHTML;
+    overlay.innerHTML = "<div class='flip'>" + overlay.innerHTML + "<input type='text' id='ans' placeholder='Enter your answer here'></input> </div>"
+}
+
+function ans() {
+    document.getElementsByClassName("flip")[0].class = "flip-card";
+    }
+
+</script>
+</head>
+<body>
+
+<h1>Geography Revision</h1>
+<h3>Hover over the cards</h3>
+<button onclick="test()">Open test mode</button>
+<br>
+
+<div id="overlay" onclick="ans()"></div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What is non-renewable energy?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Non-renewable energy comes from sources that will run out or will not be replenished for thousands or even millions of years.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What is renewable energy?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Renewable energy comes from natural sources or processes that are constantly replenished.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What is recyclable energy?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Energy recycling is the energy recovery process of using energy that would normally be wasted.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are some examples of non-renewable energy?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Finite stocks of fossil fuel coal, oil and gas.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are some examples of renewable energy?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Flows of solar, wind and HEP.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are some examples of recyclable energy?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Nuclear and biofuels.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are some impacts than mining and drilling can have on the environment?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>Landscape scarring<li>Oil spills<li>Carbon emissions<li>Removal of forests
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are some impacts that renewable energy can have on the landscape?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>HEP flooding<br><li>Land use for wind turbines and solar panels
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are some factors that affect access to energy?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>Access to technology<li>Physical resources - geology, accessibility, climate and landscape
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>How does global energy use per capita vary?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>Levels of economic development<li>Reliance of traditional fuel sources<li>Demand from different economic sectors
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What is an oil reserve?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Oil reserves are an estimate of the amount of crude oil located in a particular economic region.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>How are oil reserves and production unevenly distributed?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>There is an uneven distribution of oil resources around the world, with the majority of oil reserves being found in the Middle East, in countries such as Saudi Arabia, Iraq and Iran.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>Why is oil consumption growing?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Growing populations and increasing standards of living for many people in developing countries will place even more demand on energy resources.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What factors affect oil supply and prices?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>International relations - conflicts, diplomatic relations<li>Economic factors - recession VS boom, over or under supply
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are the costs of developing conventional energy reserves in isolated areas?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>Environmental costs: Fragile ecosystems can be put at risk 
+<li>Economic costs - imported fuel is expensive
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are unconventional energy reserves?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Resources such as tar sands (extra heavy oil deposited from a type of petroleum called bitumen) and shale gas (natural gas, predominantly methane, found in shale rock. Extracted using fracking (deep drilling).</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are the environmental costs of developing unconventional energy sources in isolated areas?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>It uses huge amounts of water that must be transported to the fracking site, at significant environmental cost. <br>
+Potentially carcinogenic chemicals used may escape and contaminate groundwater around the fracking site and affect ecosystems. <br>
+There are also worries that the fracking process can cause small earth tremors. 
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What is the difference between energy efficiency and energy conservation?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>Energy efficiency is using technology that requires less energy to perform the same function. Using a light-emitting diode (LED) light bulb or a compact fluorescent light (CFL) bulb that requires less energy than an incandescent light bulb to produce the same amount of light is an example of energy efficiency. <br><li>Energy conservation is any behavior that results in the use of less energy. Turning the lights off when leaving the room and recycling aluminum cans are both ways of conserving energy.
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>How can homes be made more energy efficient?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>insulating house roofs, blocking drafts, using double-glazing
+<li>switching off lights, power sockets, phone chargers and televisions when not in use
+<li>using energy-efficient light bulbs and rechargeable batteries
+<li>recycling and reusing plastics and oil-based products
+<li>introducing solar panels, getting a smart meter
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>How can transport be designed to better conserve energy?</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>To use less fuel or batteries which can be recharged using renewable electricity<br>
+<li>Making car owners who drive less energy efficient cars pay a higher Vehicle Excise Duty (VED) </p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>How can energy efficiency and conservation reduce demand, help finite supplies last longer and reduce carbon emissions?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>By allowing the development of new types of energy and expanding existing sources that are more sustainable than fossil fuels.
+This sustainability will allow future generations to use reliable, efficient energy resources.
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>Costs and benefits of alternatives to fossil fuels: Biofuels</p>
+    </div>
+    <div class="flip-card-back">
+      <p>made from plant materials. Benefits: renewable, less carbon emissions. Costs: labour, specialized cars.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>Costs and benefits of alternatives to fossil fuels: Wind</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Benefits: no emissions, cheap, renewable. Costs: high for building.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>Costs and benefits of alternatives to fossil fuels: Solar</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Benefits: no emissions, cheap, renewable. Costs: high manufacture as large number needed.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>Costs and benefits of alternatives to fossil fuels: HEP</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Benefits: no emissions, cheap, renewable. Costs: low once built.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What is hydrogen fuel and its advantages?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>Reacts with oxygen in a fuel cell to create electricity.<br><br>Advantages: releases more energy per kg than any other fuel except nuclear; it doesn’t pollute.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>How do alternatives to fossil fuels and technologies work to:
+<li>Reduce carbon footprints
+<li>Improve energy security (uninterrupted availability)
+<li>Diversify the energy mix
+</p>
+    </div>
+    <div class="flip-card-back">
+      <p>They reduce the amount of carbon dioxide released. 
+<li>Allow us to generate renewable electricity sources in the UK rather than importing fuel.
+<li>Give several reliable, renewable sources.
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What are the contrasting views about energy futures from the following groups:
+<li>Consumers
+<li>TNCs
+<li>Governments
+<li>Climate scientists
+<li>Environmental groups
+</p>
+    </div>
+    <div class="flip-card-back">
+      <p><li>Consumers: want cheap, reliable energy.
+<li>TNCs: want to make profits.
+<li>Governments: want cheap, reliable energy and are prepared to make some investments in new tech
+<li>Climate scientists: want new energy sources urgently to allow the planet to support humanity in the future
+<li>Environmental groups: want governments to invest in alternative energy sources
+</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What is the 'business as usual' scenario for future energy use?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>A scenario for future patterns of activity which assumes that there will be no significant change in people's attitudes and priorities.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>What the ‘move to sustainability’ scenario for future energy use is.</p>
+    </div>
+    <div class="flip-card-back">
+      <p>We will gradually switch to a fully sustainable global energy landscape.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>Why is rising affluence changing attitudes to energy futures in some, developed countries?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>People are using more energy and resources.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>Why are environmental concerns changing attitudes to energy futures in some, developed countries?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>People are using more renewable energy.</p> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>Why is education changing attitudes to energy futures in some, developed countries?</p>
+    </div>
+    <div class="flip-card-back">
+      <p>People are more educated about the dangers of using more, non-renewable energy.</p> 
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

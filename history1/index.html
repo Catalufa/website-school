@@ -1,0 +1,42 @@
+<title>Nazi Youth Project | Leo Turnbull</title>
+<link rel="stylesheet" href="style.css">
+<!--<script src="script.js"></script>-->
+
+
+
+
+<div id="myNav" class="overlay">
+  <div class="overlay-content">
+    <h1>Hitler Youth Presentation</h1>
+    <p>Designed, researched and coded by Leo Turnbull</p>
+    <button class="closebtn" onclick="beginProject()">Start</button>
+  </div>
+</div>
+
+
+<video id="video1" class="video1" src="https://drive.google.com/uc?export=download&id=1s_fWIwWLEGAgwe92PTUc-z51C3IMbpKM" height="100%" controls>
+    Please update your browser.
+</video>
+
+<iframe id="part2" class="part2" src="" height="100%" width="100%" frameBorder="0"></iframe>
+
+<script>
+//Begin project by closing message and starting video in fullscreen
+function beginProject() {
+  document.getElementById("myNav").style.opacity = "0";
+  document.getElementById("myNav").style.top = "100%";
+  video1.play();
+  video1.requestFullscreen();
+}
+
+//Detect first video end
+var video1 = document.getElementById("video1");
+var part2 = document.getElementById("part2");
+
+video1.onended = function(e) {
+	video1.style.display = "none";
+	document.getElementById("part2").src = "https://leohistory.netlify.app/";
+    part2.requestFullscreen();
+	part2.style.display = "block";
+}
+</script>

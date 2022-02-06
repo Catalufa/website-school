@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  text-align: right;
+  font-size: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.9);
+  z-index: 2;
+  cursor: pointer;
+  text-align: center;
+}
+
+#text{
+  width: 100%;
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+
+.content {
+  padding: 10px 0;
+  margin: 50px auto 0 auto;
+  width: 80%;
+}
+</style>
+</head>
+<body>
+
+<title>Holocaust Project | Leo Turnbull</title>
+
+<div id="overlay">
+  <div id="text">
+    <h2><b>Welcome to my holocaust project.</b></h2>
+	<p>Click the menu icon to open the glossary when you see a word in <b>bold</b>.</p>
+	</br>
+	<button class="button" onclick="off()"><h2>Click to begin</h2></button>
+	
+  </div>
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" id="closeButton" style="opacity:0%;" onclick="closeNav()">&times;</a>
+  <h1 style="margin: 5px;">Glossary</h1>
+  </br>
+  </br>
+  <h3 style="margin: 5px;">Mielec</h3>
+  <p style="margin: 5px;">Mielec is a small town about 70 miles north east of Krakow, in south-east Poland.</p>
+  </br>
+  <h3 style="margin: 5px;">Ghetto</h3>
+  <p style="margin: 5px;">An isolated or segregated part of a city, often with slum housing.</p>
+  </br>
+  <h3 style="margin: 5px;">Płaszów</h3>
+  <p style="margin: 5px;">Płaszów was a Nazi concentration camp in a southern suburb of Kraków in German-occupied Poland.</p>
+  </br>
+  <h3 style="margin: 5px;">Amon Göth</h3>
+  <p style="margin: 5px;">Amon Göth was the commandant of Płaszów concentration camp. Göth was tried after the war and found guilty of war crimes. He was hanged.</p>
+  </br>
+  <h3 style="margin: 5px;">Schindler</h3>
+  <p style="margin: 5px;">Schindler was a German industrialist and a member of the Nazi Party who saved the lives of over 1000 Jews who he employed in his factory.</p>
+  </br>
+  <h3 style="margin: 5px;">Auschwitz</h3>
+  <p style="margin: 5px;">Auschwitz was a large complex of concentration camps in occupied Poland.</p>
+  </br>
+  <h3 style="margin: 5px;">Belsen</h3>
+  <p style="margin: 5px;">Belsen was a Nazi concentration camp in Northern Germany. It was origionally a prisoner of war camp, but was expanded to take Jews.</p>
+  </br>
+  </br>
+  </br>
+</div>
+
+
+
+<div class="header">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>  
+</div>
+
+<span style="font-size:30px;cursor:pointer;position:fixed;left:10px;top:10px;" onclick="openNav()">&#9776;</span>
+
+
+<div class="content">
+  <img style="margin: 10px auto 20px; display: block;" width="90%" src="path.jpg">
+</div>
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+
+<script>
+function on() {
+  document.getElementById("overlay").style.display = "block";
+  disableScrolling()
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+  enableScrolling()	
+}
+on()
+
+function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+}
+
+function enableScrolling(){
+    window.onscroll=function(){myFunction()};
+}
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "30%";
+  document.getElementById("closeButton").style.opacity = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("closeButton").style.opacity = "0%";
+}
+</script>
+
+
+
+</body>
+</html> 

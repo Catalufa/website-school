@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+    html, body { height: 99%; }
+</style>
+<body>
+<button id="button" style="display:none; margin: auto;" onclick="fullscreen()">Fullscreen</button>
+<iframe id="project" src="https://chinaproject.netlify.app/" style="margin: auto; display: block;" frameBorder="0" width="640px" height="360px"></iframe>
+<script>
+
+fullscreen()
+
+function fullscreen() {
+      var elem = document.getElementById("project");
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+  document.getElementById("button").style.display = "block";
+}
+
+</script>
+     
+</body>
+</html>
